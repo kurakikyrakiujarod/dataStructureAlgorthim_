@@ -21,4 +21,5 @@ def goldbach(n):
             left += 1
 
 
-goldbach(10000)
+if __name__ == '__main__':
+    goldbach(10000)
