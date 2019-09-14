@@ -13,6 +13,7 @@ def zero(matrix):
             if m[i] == 1 or n[j] == 1:
                 matrix[i][j] = 0
 
+
 if __name__ == '__main__':
     matrix = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
               [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
@@ -23,7 +24,7 @@ if __name__ == '__main__':
     for x in matrix:
         print(x, sep=" ")
 
-    print()
     zero(matrix)
+    print()
     for x in matrix:
         print(x, sep=" ")
