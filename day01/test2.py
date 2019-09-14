@@ -38,8 +38,6 @@ class DynamicArray:
         self._A = B
         self._capacity = c
 
-        # O(n)
-
     def insert(self, k, value):
         if self._n == self._capacity:
             self._resize(2 * self._capacity)
@@ -77,5 +75,4 @@ if __name__ == '__main__':
     mylist._print()
     mylist.remove(20)
     mylist._print()
-
     print('size is: ', str(len(mylist)))
