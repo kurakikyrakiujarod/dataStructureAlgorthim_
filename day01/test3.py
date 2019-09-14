@@ -27,5 +27,5 @@ def minesweeper(m, n, p):
             print("*", end=" ") if board[i][j] == -1 else print(board[i][j], end=" ")
         print()
 
-
-minesweeper(5, 10, 0.5)
+if __name__ == '__main__':
+    minesweeper(5, 10, 0.5)
