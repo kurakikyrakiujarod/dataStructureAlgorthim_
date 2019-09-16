@@ -1,4 +1,4 @@
-def sudoku(matrix):
+def shudu(matrix):
     n = len(matrix)
 
     for i in range(n):
@@ -44,4 +44,4 @@ if __name__ == '__main__':
         [2, 8, 7, 4, 1, 9, 6, 3, 5],
         [3, 4, 5, 2, 8, 6, 1, 7, 9]
     ]
-    print(sudoku(matrix))
+    print(shudu(matrix))
