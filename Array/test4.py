@@ -1,4 +1,3 @@
-# O(m+n) space complexity
 def zero(matrix):
     m = [None] * len(matrix)
     n = [None] * len(matrix[0])
