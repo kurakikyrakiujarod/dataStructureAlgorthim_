@@ -33,5 +33,5 @@ def subsets_recursive_helper(result, lst, nums, pos):
 
 if __name__ == '__main__':
     nums = [1, 2, 3]
-    # print(subsets(nums))
-    print(subsets_recursive(nums))
+    print(subsets(nums))
+    # print(subsets_recursive(nums))
