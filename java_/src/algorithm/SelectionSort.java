@@ -2,6 +2,18 @@ package algorithm;
 
 public class SelectionSort {
 
+    static void printArrar(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
     static int[] sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             int minPos = i;
@@ -23,15 +35,5 @@ public class SelectionSort {
         printArrar(arr);
     }
 
-    static void printArrar(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
 
-    static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
 }

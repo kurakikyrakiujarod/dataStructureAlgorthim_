@@ -1,7 +1,7 @@
 package designPattern;
 
 class ToolUtil {
-    int num = 1;
+    int num;
     private static ToolUtil instance = new ToolUtil();
 
     private ToolUtil() {
@@ -12,8 +12,9 @@ class ToolUtil {
     }
 
     public void show() {
-        System.out.println(num);
         this.num++;
+        System.out.println(num);
+
     }
 }
 

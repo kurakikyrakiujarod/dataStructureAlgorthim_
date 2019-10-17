@@ -15,21 +15,15 @@ public class BubbleSort {
 
     static int[] sort(int[] arr) {
 
-        boolean notChange = true;
-
         for (int i = arr.length - 1; i > 0; i--) {
-
+            boolean sorted = true;
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
-                    notChange = false;
+                    sorted = false;
                 }
-
             }
-            if (notChange) {
-                //System.out.println(i);
-                break;
-            }
+            if (sorted) break;
 
 
         }
