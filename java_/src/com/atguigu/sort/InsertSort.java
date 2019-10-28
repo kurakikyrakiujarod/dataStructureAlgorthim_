@@ -6,10 +6,13 @@ public class InsertSort {
 
     public static void insertSort(int[] array) {
 
+        int insertValue;
+        int insertIndex;
+
         for (int i = 1; i < array.length; i++) {
 
-            int insertValue = array[i];
-            int insertIndex = i - 1;
+            insertValue = array[i];
+            insertIndex = i - 1;
 
             while (insertIndex >= 0 && array[insertIndex] > insertValue) {
 
