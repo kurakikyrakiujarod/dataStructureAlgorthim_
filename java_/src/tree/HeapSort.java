@@ -15,7 +15,7 @@ public class HeapSort {
             maxHeap(array, array.length, i);
         }
         for (int i = array.length - 1; i > 0; i--) {
-            swap(array, 0, i);
+            swap(array, i, 0);
             maxHeap(array, i, 0);
         }
     }
