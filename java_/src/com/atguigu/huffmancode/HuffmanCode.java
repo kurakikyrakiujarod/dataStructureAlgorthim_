@@ -5,7 +5,6 @@ import java.util.*;
 public class HuffmanCode {
 
     private static List<Node> getNodes(byte[] bytes) {
-
         List<Node> nodes = new ArrayList<>();
         Map<Byte, Integer> counts = new HashMap<>();
         for (byte b : bytes) {
@@ -39,12 +38,42 @@ public class HuffmanCode {
         return nodes.get(0);
     }
 
+    static Map<Byte, String> huffmanCodes = new HashMap<>();
+
+    static StringBuilder stringBuilder = new StringBuilder();
+
+    private static Map<Byte, String> getCodes(Node root) {
+        if (root == null) return null;
+        //处理root的左子树
+        getCodes(root.left, "0", stringBuilder);
+        //处理root的右子树
+        getCodes(root.right, "1", stringBuilder);
+        return huffmanCodes;
+    }
+
+    private static void getCodes(Node node, String code, StringBuilder stringBuilder) {
+        StringBuilder stringBuilder2 = new StringBuilder(stringBuilder);
+        stringBuilder2.append(code);
+        if (node != null) {
+            if (node.data == null) {
+                getCodes(node.left, "0", stringBuilder2);
+                getCodes(node.right, "1", stringBuilder2);
+            } else {
+                huffmanCodes.put(node.data, stringBuilder2.toString());
+            }
+        }
+
+    }
+
+
     public static void main(String[] args) {
         String content = "i like like like java do you like a java";
         byte[] contentBytes = content.getBytes();
         List<Node> nodes = getNodes(contentBytes);
         Node root = createHuffmanTree(nodes);
-        root.preOrder();
+        //root.preOrder();
+        getCodes(root);
+        System.out.println(huffmanCodes);
     }
 }
 

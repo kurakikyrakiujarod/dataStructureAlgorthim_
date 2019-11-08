@@ -7,7 +7,6 @@ import java.util.List;
 public class HuffmanTree {
 
     public static Node createHuffmanTree(int[] array) {
-
         List<Node> nodes = new ArrayList<>();
         for (int value : array) {
             nodes.add(new Node(value));
