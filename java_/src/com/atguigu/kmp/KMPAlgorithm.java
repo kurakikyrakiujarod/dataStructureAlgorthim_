@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 public class KMPAlgorithm {
 
+    public static void main(String[] args) {
+        String str1 = "BBC ABCDAB ABCDABCDABDE";
+        String str2 = "ABCDABD";
+        int[] next = kmpNext("bacbabb");
+        System.out.println("next = " + Arrays.toString(next));
+        //System.out.println(kmpSearch(str1, str2, next));
+
+    }
+
     public static int kmpSearch(String str1, String str2, int[] next) {
 
         for (int i = 0, j = 0; i < str1.length(); i++) {
@@ -27,12 +36,5 @@ public class KMPAlgorithm {
         return next;
     }
 
-    public static void main(String[] args) {
-        String str1 = "BBC ABCDAB ABCDABCDABDE";
-        String str2 = "ABCDABD";
-        int[] next = kmpNext(str2); //[0, 1, 2, 0]
-        //System.out.println("next=" + Arrays.toString(next));
-        System.out.println(kmpSearch(str1, str2, next));
 
-    }
 }
