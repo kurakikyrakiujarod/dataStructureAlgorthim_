@@ -1,5 +1,6 @@
 package com.mj.dynamicarray;
 
+
 public class ArrayList<E> {
 
     private int size;
@@ -24,6 +25,8 @@ public class ArrayList<E> {
             elements[i] = null;
         }
         size = 0;
+        if (elements != null && elements.length > DEFAULT_CAPACITY)
+            elements = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
     public int size() {
@@ -120,6 +123,22 @@ public class ArrayList<E> {
         E old = elements[index];
         for (int i = index + 1; i < size; i++) elements[i - 1] = elements[i];
         elements[--size] = null;
+        //trim();
         return old;
+    }
+
+    private void trim() {
+        int oldCapacity = elements.length;
+        int newCapacity = oldCapacity >> 1;
+        if (size > (newCapacity) || oldCapacity <= DEFAULT_CAPACITY) return;
+
+        // 剩余空间还很多
+        E[] newElements = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newElements[i] = elements[i];
+        }
+        elements = newElements;
+
+        //System.out.println(oldCapacity + "缩容为" + newCapacity);
     }
 }
